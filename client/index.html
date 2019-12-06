@@ -7,42 +7,55 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header>
+    <img src="images/dei_building.jfif" class="watermark">
+
+    <header role="banner">
         <img src="images/logo.png" class="logo">
         <h1>Course Management System</h1>
         <h2>An open source initiative of the Ministry of Human Resource Development</h2>
     </header>
 
-    <div class="navigation">
-        <a href="#">Teacher Login</a>
-        <a href="#">Student Login</a>
-    </div>
+    <section id="navigation" role="navigation">
+        <a href="#" role="button">Teacher Login</a>
+        <a href="#" role="button">Student Login</a>
+    </section>
        
     <div class="content"> 
-        <div class="sidebar">
+        <aside role="sidebar" class="card">
             <a href="#">First Semester Student Registration</a>
             <a href="#">Download Student Report</a>
             <a href="#">CMS Complaints</a>
-        </div>
+        </aside>
 
-        <main>
-            <div class="login">
-                <h3>For Teachers</h3>
+        <main role="main">
+            <section class="login card">
+                <h1>For Teachers</h1>
                 <p>Login to view as well as update marks of students in your subjects.</p>
-                <button>Login</button>
-            </div>
+                <button>Update Subject Marks</button>
+            </section>
 
-            <div class="login">
-                <h3>For Students</h3>
+            <section class="login card">
+                <h1>For Students</h1>
                 <p>Login to complete course registration, view list of courses and see your marks by subject</p>
-                <button>Login</button>
-            </div>
+                <button>Register &amp; View Course Info</button>
+            </section>
 
-            <!-- <img src="images/dei_building.jfif"> -->
+            <form name="student-login" action="action.php" method="post">
+                <label>
+                    Roll Number: 
+                    <input name="roll-number" type="number" placeholder="Enter your roll number" maxlength="7" required>
+                </label>
+
+                <label>
+                    Date of Birth: 
+                    <input name="date-of-birth" type="date" required>
+                </label>
+                <button type="submit">Login</button>
+            </form>
         </main>
     </div>
 
-    <footer>
+    <footer role="footer">
         <p class="copyright">Copyright &copy; 2011 Dayalbagh Educational Institute, Dayalbagh, Agra UP 282110, India</p>
         <p>Phone: +91-562-2801545</p>
         <p>Fax: +91-562-2801226</p>

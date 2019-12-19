@@ -40,16 +40,16 @@
                 <button>Register &amp; View Course Info</button>
             </section>
 
-            <form name="student-login" action="action.php" method="post">
-                <label>
-                    Roll Number: 
-                    <input name="roll-number" type="number" placeholder="Enter your roll number" maxlength="7" required>
-                </label>
+            <form class="popup card" name="student-login" action="action.php" method="post">
+                <h1>Student Login</h1>
 
-                <label>
-                    Date of Birth: 
-                    <input name="date-of-birth" type="date" required>
-                </label>
+                <p>
+                    <strong>Note:</strong> Enter your date of birth as password in the format ddmmyyyy.
+                    Don't enter any hyphen, slash or other special symbols.
+                </p>
+
+                <input name= type="number" placeholder="Roll number" maxlength="7" required>
+                <input name="password" type="password" placeholder="Password" maxlength="8" required>
                 <button type="submit">Login</button>
             </form>
         </main>

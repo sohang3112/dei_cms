@@ -12,14 +12,18 @@ html {
     width: 100%;
     height: 100%;
     font-family: "Open Sans", sans-serif;
-    --background-std: rgba(255,182,193, 0.4);           /* transluscent light pink */
+    --off-white: rgb(243, 247, 247);
+    --light-pink: rgb(255,182,193);           
     --grey: rgb(67, 84, 93);
     --green: rgb(0, 153, 51);
+
+    --input-icon-padding: 5px;
 }
 
 body {
     height: 100%;
     overflow: hidden;
+    background-color: var(--off-white);
 }
 
 a {
@@ -33,13 +37,42 @@ a:hover {
 }
 
 button {
-    font-weight: bold;
-    font-size: 1.3em;
-    padding: 3% 0;
-    border-style: solid;
-    border-width: 2px;
+    outline: none;
 }
 
+/* =========================== PAGE LAYOUT ========================= */
+body {
+    display: grid;
+    grid-template-areas: 
+        'header header header header header header'
+        'sidebar sidebar main main empty empty'
+        'sidebar sidebar main main empty empty'
+        'sidebar sidebar main main empty empty'
+        'footer footer footer footer footer footer';
+    grid-gap: 10px;
+    grid-template-rows: auto repeat(3, 1fr) auto;
+    grid-auto-columns: calc((100% - 5*10px)/ 6);          /* 6 columns (removing 10px each for column padding) */
+}
+
+header {
+    grid-area: header;
+}
+
+aside[role="sidebar"] {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.empty {
+    grid-area: empty;
+}
 /* ============================ HEADER ============================== */
 header {
     text-align: center;
@@ -50,134 +83,57 @@ header {
     margin: auto;
 }
 
-header h1 {
-    color: darkblue;
-}
-
 header h2 {
-    color: orange;
-    padding: 0 20%;
-    font-size: 0.9rem;
+    font-style: italic;
 }
 
-/* =============================== NAVIGATION BAR =================================== */
-#navigation {
+/* ============================= LOGIN FORM ======================================= */
+.login {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;              /* right align elements */
-    padding: 5px 0;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
 }
 
-#navigation a {
-    display: inline-block;
-    padding: 1%;
-    margin: 0 2%;
+.login h1 {
     text-align: center;
-    font-size: 1.3rem;
-    width: 15%;
 }
 
-#navigation a:last-child {
-    border: 2px solid var(--grey);
+.custom-input {
+    width: 100%;
+    margin: 10px 0;
 }
-/* =========================== NAVIGATION BAR END ============================== */
 
-.content {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2%;
+.custom-input input {
+    width: 100%;
+    padding: 5px var(--input-icon-padding);
+}
+
+.hover-button {
+    padding: 2%;
+    width: 100px;
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: auto;                  /* push button to right */
+}
+
+.hover-button:hover {
+    background-color: white;
+    color: var(--green);
 }
 
 /* ============================= SIDE BAR ========================================== */
 aside {
     display: flex;
     flex-direction: column;
-    padding: 2%;
-    background: var(--background-std);
+    padding: 0 5%;
 }
 
 aside a {
     display: block; 
-    margin: 2%;
-}
-
-/* ============================= CARDS ========================================== */
-.card {
-    border: 1px solid grey;
-    border-radius: 5px;
-    box-shadow: 5px 5px 8px;
-    background: var(--background-std);
-}
-
-/* ============================= MAIN =========================================== */
-main {
-    display: flex;
-    flex-direction: row;
-}
-
-.login {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 100%;
-    line-height: 1.5rem;
-    margin: 0 10%;
-    padding: 0 1%;  
-}
-
-.login h1 {
-    font-family: arial, sans-serif;
-    color: black;
-}
-
-.login p {
-    font-family: "Source Code Pro", sans-serif;
-    color: var(--grey);
-}
-
-.login button {
-    margin-top: auto;               /* stick to bottom of flex container */
-    background-color: white;
-    color: var(--green);
-    border-color: var(--green);
-    margin-bottom: 5px;
-}
-
-.login button:hover {
-    background-color: var(--green);
-    color: white;
-    cursor: pointer;
-}
-
-/* ============================= POPUP FORMS ===================================== */
-.popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    top: 45%;
-    left: 35%;
-    background: white;
-    width: 400px;
-    padding: 1%;
-}
-
-.popup[hidden] {
-    display: none;
-}
-
-.popup h1 {
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.popup input {
-    display: block;
-    width: 100%;
-}
-
-.popup button {
-    margin-left: auto;          /* right align */
+    margin: 2% 0;
 }
 
 /* ============================= FOOTER ============================================= */
@@ -185,14 +141,8 @@ footer {
     display: inline-flex;
     flex-direction: row;
     color: var(--grey);
-    background: var(--background-std);
     justify-content: space-around;
-    position: fixed;
-    left: 0;
-    bottom: 0.5%;
-    width: calc(100% - 2 * var(--horizontal-margin));
     font-size: 0.7rem;
-    border-top: 5px solid #333333;
-    margin: 0 var(--horizontal-margin);
-    --horizontal-margin: 1%;
+    border-top: 2px solid #333333;
+    margin: 1% 0;
 }

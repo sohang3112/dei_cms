@@ -4,6 +4,7 @@
     <title>Course Management System</title>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -12,49 +13,38 @@
         <h1>Course Management System</h1>
         <h2>An open source initiative of the Ministry of Human Resource Development</h2>
     </header>
-
-    <section id="navigation" role="navigation">
-        <a href="#" role="button">Teacher Login</a>
-        <a href="#" role="button">Student Login</a>
-    </section>
        
-    <div class="content"> 
-        <aside role="sidebar" class="card">
-            <a href="#">First Semester Student Registration</a>
-            <a href="#">Download Student Report</a>
-            <a href="#">CMS Complaints</a>
-        </aside>
+    <aside role="sidebar">
+        <a href="#">First Semester Student Registration</a>
+        <a href="#">Download Student Report</a>
+        <a href="#">CMS Complaints</a>
+    </aside>
 
-        <main role="main">
-            <section class="login card">
-                <h1>For Teachers</h1>
-                <p>Login to view as well as update marks of students in your subjects.</p>
-                <button>Update Subject Marks</button>
-            </section>
+    <main role="main">
+        <form class="login" action="action.php">
+            <h1>Log In</h1>
+            <p>
+                <strong>Note (for students):</strong>
+                Type your roll number in username and your date of birth in password.
+                Date of birth format is (dd-mm-yyyy) without the hyphens.
+            </p>
 
-            <section class="login card">
-                <h1>For Students</h1>
-                <p>Login to complete course registration, view list of courses and see your marks by subject</p>
-                <button>Register &amp; View Course Info</button>
-            </section>
+            <div class="custom-input">
+                <input name="username" placeholder="User Name" type="text" required>
+            </div>
 
-            <form class="popup card" name="student-login" action="action.php" method="post" hidden>
-                <h1>Student Login</h1>
+            <div class="custom-input">
+                <input name="password" placeholder="Password" type="password" required>
+            </div>
+            
+            <button class="hover-button" type="submit">Login</button>
+        </form>
+    </main>
 
-                <p>
-                    <strong>Note:</strong> Enter your date of birth as password in the format ddmmyyyy.
-                    Don't enter any hyphen, slash or other special symbols.
-                </p>
-
-                <input name= type="number" placeholder="Roll number" maxlength="7" required>
-                <input name="password" type="password" placeholder="Password" maxlength="8" required>
-                <button type="submit">Login</button>
-            </form>
-        </main>
-    </div>
+    <div class="empty"></div>
 
     <footer role="footer">
-        <p class="copyright">Copyright &copy; 2011 Dayalbagh Educational Institute, Dayalbagh, Agra UP 282110, India</p>
+        <p>Copyright &copy; 2011 Dayalbagh Educational Institute, Dayalbagh, Agra UP 282110, India</p>
         <p>Phone: +91-562-2801545</p>
         <p>Fax: +91-562-2801226</p>
     </footer>

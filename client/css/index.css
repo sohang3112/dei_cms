@@ -27,6 +27,7 @@ body {
     flex-direction: column;
     height: 100%;
     background-color: var(--off-white);
+    overflow-x: hidden;             /* to fix footer width overflowing */
 }
 
 a {
@@ -61,9 +62,10 @@ noscript {              /* only displays if javascript is disabled */
         'sidebar sidebar main main main main'
         'sidebar sidebar main main main main'
         'footer footer footer footer footer footer';
-    grid-gap: 10px;
+    --grid-gap: 2px;
+    grid-gap: var(--grid-gap);
     grid-template-rows: auto repeat(3, 1fr) auto;
-    grid-auto-columns: calc((100% - 5*10px) / 6);          /* 6 columns (removing 10px each for column padding) */
+    grid-auto-columns: calc((100% - 5 * var(--grid-gap)) / 6);  /* 6 columns (removing 10px each for column padding) */
 }
 
 header {
@@ -78,7 +80,7 @@ main {
     grid-area: main;
 }
 
-footer {
+.footer-wrapper {
     grid-area: footer;
 }
 
@@ -88,12 +90,15 @@ footer {
 
 /* ============================ HEADER ============================== */
 header {
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
 .logo {
     display: block;
     margin: auto;
+    width: 100%;            /* for phones */
 }
 
 header h1 {
@@ -166,20 +171,43 @@ aside a {
 }
 
 /* ============================= FOOTER ============================================= */
-footer {
+.footer-wrapper {
     flex: 0;
+    display: flex;
+    width: 100%;
+    border-top: 2px solid #333333;
+    margin: auto 0 0 0;
+}
+
+footer {
+    width: minmax(450px, 100%);
     display: inline-flex;
     flex-direction: column;
     color: var(--grey);
     justify-content: space-around;
     font-size: 0.7rem;
-    border-top: 2px solid #333333;
-    padding: 0;
-    margin: auto 0 0 0;
+    margin: 0 auto;
 }
 
 /* tablets and laptops */
 @media only screen and (min-width: 600px) {
+    .logo {
+        width: initial;
+    }
+
+    .content {
+        grid-template-areas: 
+            'header header header header header header'
+            'sidebar sidebar main main main empty'
+            'sidebar sidebar main main main empty'
+            'sidebar sidebar main main main empty'
+            'footer footer footer footer footer footer';
+        grid-gap: 5px;
+    }
+}
+
+/* laptops */
+@media only screen and (min-width: 768px) {
     .content {
         grid-template-areas: 
             'header header header header header header'
@@ -187,10 +215,11 @@ footer {
             'sidebar sidebar main main empty empty'
             'sidebar sidebar main main empty empty'
             'footer footer footer footer footer footer';
-        grid-gap: 2px;
+        grid-gap: 10px;
     }
 
     footer {
         flex-direction: row;
+        width: 100%;
     }
 }

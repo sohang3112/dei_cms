@@ -36,10 +36,6 @@ a:hover {
     opacity: 1;             /* darken */
 }
 
-button {
-    outline: none;
-}
-
 /* =========================== PAGE LAYOUT ========================= */
 body {
     display: grid;
@@ -116,6 +112,7 @@ header h2 {
     color: white;
     font-weight: bold;
     font-size: 1.2em;
+    border: 2px solid var(--green);
     margin-left: auto;                  /* push button to right */
 }
 

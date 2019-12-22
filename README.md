@@ -25,3 +25,9 @@ This project is an effort to redesign the website using HTML5 and CSS3 to give i
 - Upload/edit marks by subject
 - Sort/(Manipulate using Excel Formulae) student marks
 - View fee payment data for current semester
+
+## Dependencies
+- Font Awesome 5 (hosted by cdnjs.cloudflare.com)
+
+## Issues
+- Unnecessary vertical scrollbar appearing on page (overflow:hidden cannot be used as it causes other things to break)

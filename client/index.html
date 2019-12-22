@@ -8,45 +8,57 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header role="banner">
-        <img src="images/logo.png" class="logo">
-        <h1>Course Management System</h1>
-        <h2>An open source initiative of the Ministry of Human Resource Development</h2>
-    </header>
-       
-    <aside role="sidebar">
-        <a href="#">First Semester Student Registration</a>
-        <a href="#">Download Student Report</a>
-        <a href="#">CMS Complaints</a>
-    </aside>
+    <noscript>
+        This website requires javascript to run. Please enable javascript in your browser settings.
+    </noscript>
 
-    <main role="main">
-        <form class="login" action="action.php">
-            <h1>Log In</h1>
-            <p>
-                <strong>Note (for students):</strong>
-                Type your roll number in username and your date of birth in password.
-                Date of birth format is (dd-mm-yyyy) without the hyphens.
-            </p>
+    <div class="content">
+        <header role="banner">
+            <img src="images/logo.png" class="logo">
+            <h1>Course Management System</h1>
+            <h2>An open source initiative of the Ministry of Human Resource Development</h2>
+        </header>
+           
+        <aside role="sidebar">
+            <a href="#">First Semester Student Registration</a>
+            <a href="#">Download Student Report</a>
+            <a href="#">CMS Complaints</a>
+            <a href="#">Annual Progress Reports</a>
+            <a href="#">Internal Marks of Current Semester</a>
+        </aside>
 
-            <div class="custom-input">
-                <input name="username" placeholder="User Name" type="text" required>
-            </div>
+        <main role="main">
+            <form class="login" action="action.php">
+                <h1>Log In</h1>
+                <p>
+                    <strong>Note (for students):</strong>
+                    Type your roll number in username and your date of birth in password.
+                    Date of birth format is (ddmmyyyy). Don't insert any characters such 
+                    as backslash (/) or hyphen (-) between the digits.
+                </p>
 
-            <div class="custom-input">
-                <input name="password" placeholder="Password" type="password" required>
-            </div>
-            
-            <button class="hover-button" type="submit">Login</button>
-        </form>
-    </main>
+                <div class="custom-input">
+                    <input name="username" placeholder="User Name" type="text" required>
+                </div>
 
-    <div class="empty"></div>
+                <div class="custom-input">
+                    <input name="password" placeholder="Password" type="password" required>
+                </div>
+                
+                <button class="hover-button" type="submit">Login</button>
+            </form>
+        </main>
 
-    <footer role="footer">
-        <p>Copyright &copy; 2011 Dayalbagh Educational Institute, Dayalbagh, Agra UP 282110, India</p>
-        <p>Phone: +91-562-2801545</p>
-        <p>Fax: +91-562-2801226</p>
-    </footer>
+        <!-- Dummy element to provide empty space in CSS Grid -->
+        <div class="empty"></div>               
+
+        <footer role="footer">
+            <p>Copyright &copy; 2011 Dayalbagh Educational Institute, Dayalbagh, Agra UP 282110, India</p>
+            <p>Phone: +91-562-2801545</p>
+            <p>Fax: +91-562-2801226</p>
+        </footer>
+    </div>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

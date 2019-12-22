@@ -18,11 +18,13 @@ html {
     --green: rgb(0, 153, 51);
 
     --input-icon-padding: 5px;
+    --highlight: var(--green);
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    overflow: hidden;
     background-color: var(--off-white);
 }
 
@@ -36,8 +38,21 @@ a:hover {
     opacity: 1;             /* darken */
 }
 
+/* =========================== NOSCRIPT =========================== */
+noscript {
+    display: block;
+    width: 100%;
+    font-size: small;
+    text-align: center;
+    color: var(--grey);
+    border-bottom: 1px solid var(--grey);
+    margin-bottom: 10px;
+}
+
 /* =========================== PAGE LAYOUT ========================= */
-body {
+.content {
+    flex: 1;
+    width: 100%;
     display: grid;
     grid-template-areas: 
         'header header header header header header'
@@ -47,7 +62,7 @@ body {
         'footer footer footer footer footer footer';
     grid-gap: 10px;
     grid-template-rows: auto repeat(3, 1fr) auto;
-    grid-auto-columns: calc((100% - 5*10px)/ 6);          /* 6 columns (removing 10px each for column padding) */
+    grid-auto-columns: calc((100% - 5*10px) / 6);          /* 6 columns (removing 10px each for column padding) */
 }
 
 header {
@@ -69,6 +84,7 @@ footer {
 .empty {
     grid-area: empty;
 }
+
 /* ============================ HEADER ============================== */
 header {
     text-align: center;
@@ -79,8 +95,14 @@ header {
     margin: auto;
 }
 
+header h1 {
+    font-family: "Arial Black", helvectiva, sans-serif;
+    font-size: 2.5em;
+}
+
 header h2 {
     font-style: italic;
+    color: var(--grey);
 }
 
 /* ============================= LOGIN FORM ======================================= */
@@ -92,7 +114,9 @@ header h2 {
 }
 
 .login h1 {
+    font-family: cambria, sans-serif;
     text-align: center;
+    color: darkred;
 }
 
 .custom-input {
@@ -103,22 +127,24 @@ header h2 {
 .custom-input input {
     width: 100%;
     padding: 5px var(--input-icon-padding);
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1.1em;
 }
 
 .hover-button {
     padding: 2%;
     width: 100px;
-    background-color: var(--green);
+    background-color: var(--highlight);
     color: white;
     font-weight: bold;
     font-size: 1.2em;
-    border: 2px solid var(--green);
+    border: 2px solid var(--highlight);
     margin-left: auto;                  /* push button to right */
 }
 
 .hover-button:hover {
     background-color: white;
-    color: var(--green);
+    color: var(--highlight);
 }
 
 /* ============================= SIDE BAR ========================================== */
@@ -135,11 +161,13 @@ aside a {
 
 /* ============================= FOOTER ============================================= */
 footer {
+    flex: 0;
     display: inline-flex;
     flex-direction: row;
     color: var(--grey);
     justify-content: space-around;
     font-size: 0.7rem;
     border-top: 2px solid #333333;
-    margin: 1% 0;
+    padding: 0;
+    margin: auto 0 0 0;
 }

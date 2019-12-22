@@ -19,7 +19,8 @@ html {
     --grey: rgb(67, 84, 93);
     --green: rgb(0, 153, 51);
 
-    --input-icon-padding: 5px;
+    --input-icon-padding: 10px;
+    --input-placeholder-color: rgb(117,117,117);
 }
 
 body {
@@ -128,13 +129,26 @@ header h2 {
 .custom-input {
     width: 100%;
     margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 2px solid var(--input-placeholder-color);
+    padding: 5px 0;
+    background-color: var(--off-white);
+}
+
+.custom-input .fas {
+    flex: 0;
+    margin: 0 var(--input-icon-padding);
+    color: var(--input-placeholder-color);
 }
 
 .custom-input input {
-    width: 100%;
-    padding: 5px var(--input-icon-padding);
     font-family: "Times New Roman", sans-serif;
     font-size: 1.1em;
+    flex: 1;
+    border: none;
+    outline: none;
 }
 
 .hover-button {

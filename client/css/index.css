@@ -99,7 +99,8 @@ header {
 .logo {
     display: block;
     margin: auto;
-    width: 100%;            /* for phones */
+    width: 100%;
+    max-width: 600px;
 }
 
 header h1 {
@@ -205,10 +206,6 @@ footer {
 
 /* tablets and laptops */
 @media only screen and (min-width: 600px) {
-    .logo {
-        width: initial;
-    }
-
     .content {
         grid-template-areas: 
             'header header header header header header'

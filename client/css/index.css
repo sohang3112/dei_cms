@@ -154,19 +154,25 @@ header h2 {
 
 .hover-button {
     padding: 2%;
-    width: 100px;
+    width: 150px;
     background-color: var(--green);
     color: white;
     font-weight: bold;
     font-size: 1.2em;
     border: 2px solid var(--green);
+    border-radius: 5px;
+    outline: none;
     margin-left: auto;                  /* push button to right */
 }
 
-.hover-button:hover {
+.hover-button:hover, .hover-button:active {
     background-color: white;
     color: var(--green);
     cursor: pointer;
+}
+
+.hover-button:active {
+    box-shadow: 2px 2px 2px;
 }
 
 /* ============================= SIDE BAR ========================================== */

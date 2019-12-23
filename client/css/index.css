@@ -41,6 +41,10 @@ a:hover {
     opacity: 1;             /* darken */
 }
 
+a:active {
+    text-decoration: underline;
+}
+
 /* =========================== NOSCRIPT =========================== */
 noscript {              /* only displays if javascript is disabled */
     display: block;

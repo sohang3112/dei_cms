@@ -45,6 +45,12 @@ a:active {
     text-decoration: underline;
 }
 
+a[target="_blank"]:after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;               /* .fas (solid icon) */
+    content: " \f35d";              /* .fa-external-link-alt */
+}
+
 /* =========================== NOSCRIPT =========================== */
 noscript {              /* only displays if javascript is disabled */
     display: block;
@@ -188,7 +194,11 @@ aside {
 
 aside a {
     display: block; 
-    margin: 5% 0;
+    margin: 3% 0;
+}
+
+aside a:last-child[target="_blank"] {           /* link to dei.ac.in */
+    margin-top: auto;
 }
 
 .selected-link {

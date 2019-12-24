@@ -1,5 +1,5 @@
 const main = document.querySelector('main');
-const sidebarLinks = document.querySelector('[role="sidebar"]').children;
+const sidebarLinks = document.querySelectorAll('[role="sidebar"] a[href="#"]');
 
 for (const curr of sidebarLinks) 
     curr.addEventListener('click', function() {

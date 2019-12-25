@@ -14,6 +14,7 @@ html {
     width: 100%;
     height: 100%;
     font-family: "Open Sans", sans-serif;
+    
     --off-white: rgb(243, 247, 247);
     --light-pink: rgb(255,182,193);           
     --grey: rgb(67, 84, 93);
@@ -129,6 +130,8 @@ header h2 {
     flex-direction: column;
     background-color: white;
     padding: 10px;
+    border-radius: 50px;
+    border: 3px solid #888888;
 }
 
 .login h1 {
@@ -173,6 +176,7 @@ header h2 {
     border-radius: 5px;
     outline: none;
     margin-left: auto;                  /* push button to right */
+    margin-right: 10px;
 }
 
 .hover-button:hover, .hover-button:active {
@@ -195,10 +199,6 @@ aside {
 aside a {
     display: block; 
     margin: 3% 0;
-}
-
-aside a:last-child[target="_blank"] {           /* link to dei.ac.in */
-    margin-top: auto;
 }
 
 .selected-link {

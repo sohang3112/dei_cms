@@ -1,9 +1,9 @@
 const main = document.querySelector('main');
 
-enableSidebarLinkSelection();
+enableLinkSelection('.sidebar');
 
-function enableSidebarLinkSelection() {
-    const sidebarLinks = document.querySelectorAll('[role="sidebar"] a[href="#"]');
+function enableLinkSelection(elementCss) {
+    const sidebarLinks = document.querySelectorAll(elementCss + ' a[href="#"]');
     sidebarLinks[0].classList.add('selected-link');
 
     for (const curr of sidebarLinks) 

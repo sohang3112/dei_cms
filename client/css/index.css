@@ -14,7 +14,7 @@ html {
     width: 100%;
     height: 100%;
     font-family: "Open Sans", sans-serif;
-    
+
     --off-white: rgb(243, 247, 247);
     --light-pink: rgb(255,182,193);           
     --grey: rgb(67, 84, 93);
@@ -84,7 +84,7 @@ header {
     grid-area: header;
 }
 
-aside[role="sidebar"] {
+.sidebar {
     grid-area: sidebar;
 }
 
@@ -190,13 +190,13 @@ header h2 {
 }
 
 /* ============================= SIDE BAR ========================================== */
-aside {
+.sidebar {
     display: flex;
     flex-direction: column;
     padding: 0 5%;
 }
 
-aside a {
+.sidebar a {
     display: block; 
     margin: 3% 0;
 }

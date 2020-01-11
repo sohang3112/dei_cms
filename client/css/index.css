@@ -30,6 +30,8 @@ body {
     height: 100%;
     background-color: var(--off-white);
     overflow-x: hidden;             /* to fix footer width overflowing */
+    padding: 0;
+    margin: 0;
 }
 
 a {
@@ -52,17 +54,19 @@ a[target="_blank"]:after {
     content: " \f35d";              /* .fa-external-link-alt */
 }
 
-a.image-link:after {
+a.image-link:after {                /* remove external link icon after image links */
     content: "";
 }
 
 /* =========================== NOSCRIPT =========================== */
-noscript {              /* only displays if javascript is disabled */
+.warning {              /* only displays if javascript is disabled */
     display: block;
     width: 100%;
     font-size: small;
+    font-weight: bold;
     text-align: center;
-    color: var(--grey);
+    background-color: red;
+    color: white;
     border-bottom: 1px solid var(--grey);
     margin-bottom: 10px;
 }
@@ -100,8 +104,8 @@ main {
     grid-area: footer;
 }
 
-.empty {
-    grid-area: empty;
+.complaints {
+    grid-area: complaints;
 }
 
 /* ============================ HEADER ============================== */
@@ -129,11 +133,11 @@ header h2 {
 }
 
 /* ============================= LOGIN FORM ======================================= */
-.login {
+.content-box {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 50px;
     border: 3px solid #888888;
 }
@@ -171,7 +175,7 @@ header h2 {
 
 .hover-button {
     padding: 2%;
-    width: 150px;
+    width: auto;
     background-color: var(--green);
     color: white;
     font-weight: bold;
@@ -179,8 +183,9 @@ header h2 {
     border: 2px solid var(--green);
     border-radius: 5px;
     outline: none;
+    opacity: 1;
     margin-left: auto;                  /* push button to right */
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .hover-button:hover, .hover-button:active {
@@ -209,6 +214,14 @@ header h2 {
     opacity: 1;
 }
 
+/* ============================== COMPLAINTS ======================================== */
+/*
+.complaints {
+    width: 60%;
+    margin: auto;
+}
+*/
+
 /* ============================= FOOTER ============================================= */
 .footer-wrapper {
     flex: 0;
@@ -233,9 +246,9 @@ footer {
     .content {
         grid-template-areas: 
             'header header header header header header'
-            'sidebar sidebar main main main empty'
-            'sidebar sidebar main main main empty'
-            'sidebar sidebar main main main empty'
+            'sidebar sidebar main main main complaints'
+            'sidebar sidebar main main main complaints'
+            'sidebar sidebar main main main complaints'
             'footer footer footer footer footer footer';
         grid-gap: 5px;
     }
@@ -246,9 +259,9 @@ footer {
     .content {
         grid-template-areas: 
             'header header header header header header'
-            'sidebar sidebar main main empty empty'
-            'sidebar sidebar main main empty empty'
-            'sidebar sidebar main main empty empty'
+            'sidebar sidebar main main complaints complaints'
+            'sidebar sidebar main main complaints complaints'
+            'sidebar sidebar main main complaints complaints'
             'footer footer footer footer footer footer';
         grid-gap: 10px;
     }

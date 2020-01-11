@@ -4,17 +4,20 @@
     <title>Course Management System</title>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/page_icon.jfif">
+    <meta name="keywords" content="DEI,CMS">
+    <meta name="description" content="D.E.I. Course Management System">
+    <meta name="author" content="Sohang Chopra">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <noscript>
+    <noscript class="warning">
         This website requires javascript to run. Please enable javascript in your browser settings.
     </noscript>
 
     <div class="content">
-        <header role="banner">
+        <header>
             <a href="www.dei.ac.in" target="_blank" class="logo image-link">
                 <img src="images/logo.png" alt="D.E.I. Website">
             </a>
@@ -22,18 +25,20 @@
             <h2>An open source initiative of the Ministry of Human Resource Development</h2>
         </header>
            
-        <section class="sidebar">
+        <section class="sidebar" role="sidebar">
             <a href="#">Internal Marks of Current Semester</a>
             <a href="#">First Semester Student Registration</a>
             <a href="#">Download Student Report</a>
             <a href="#">Annual Progress Reports</a>
-            <a href="#">CMS Complaints</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf87Wi1OVvnlpygm3jkEzeBPJJVCUNny-DTHM0Z3IvHuvcj0A/viewform">
+                CMS Complaints
+            </a>
 
             <a href="www.dei.ac.in" target="_blank" style="margin-top: auto">Central Website (dei.ac.in)</a>
         </section>
 
         <main role="main">
-            <form class="login" action="action.php">
+            <form class="login content-box" action="login" method="post" enctype="multipart/form-data">
                 <h1>Log In</h1>
                 <p>
                     <strong>Note (for students):</strong>
@@ -59,11 +64,17 @@
             </form>
         </main>
 
-        <!-- Dummy element to provide empty space in CSS Grid -->
-        <div class="empty"></div>               
+        <div class="complaints"></div>
+        <!--
+        <section class="complaints content-box">
+            <h1>Complaint Box</h1>
+            <p>Do you have any complaints about your experience on this website? Tell us about it here.</p>
+            <a href="complaints.html" class="hover-button">Register Complaint</a>
+        </section>              
+        -->
 
         <div class="footer-wrapper">
-            <footer role="footer">
+            <footer>
                 <p>Copyright &copy; 2011 Dayalbagh Educational Institute, Dayalbagh, Agra UP 282110, India</p>
                 <p>Phone: +91-562-2801545</p>
                 <p>Fax: +91-562-2801226</p>

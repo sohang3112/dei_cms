@@ -38,9 +38,9 @@
         </section>
 
         <main role="main">
-            <form class="login content-box" action="login" method="post" enctype="multipart/form-data">
+            <form class="login content-box" action="login" method="post">
                 <h1>Log In</h1>
-                <p>
+                <p class="important">
                     <strong>Note (for students):</strong>
                     Type your roll number in username and your date of birth in password.
                     Date of birth format is <em>ddmmyyyy</em>. Do not insert extra characters such 
@@ -62,16 +62,55 @@
                     <span class="fas fa-paper-plane"></span>
                 </button>
             </form>
+
+            <form class="content-box" action="download-registration-report" method="post" hidden>
+                <h1>Download Registration Report</h1>
+
+                <div class="custom-input">
+                    <span class="fas fa-user"></span>
+                    <input name="registration" type="number" placeholder="Registration / Roll Number" required>
+                </div>
+
+                <p class="important">
+                    Make sure the entered records are as per your admission / registration record in DEI.
+                </p>
+
+                <div class="alternative">
+                    <fieldset>
+                        <legend>Aadhar Number</legend>
+                        <div class="custom-input">
+                            <span class="fas fa-fingerprint"></span>
+                            <input name="aadhar" type="number" placeholder="Aadhar Number">
+                        </div>
+                    </fieldset>
+
+                    <p class="alt-text">OR</p>
+
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                        <div class="custom-input">
+                            <span class="fas fa-calendar-day"></span>
+                            <input name="date-of-birth" type="text" placeholder="Date of Birth" 
+                            onfocus="this.type='date'" onblur="this.type='text'">
+                        </div>
+
+                        <div class="custom-input">
+                            <span class="fas fa-phone"></span>
+                            <input name="contact-number" type="number" placeholder="Contact Number">
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button class="hover-button" type="submit">
+                    Download Report
+                    <span class="fas fa-download"></span>
+                </button>
+            </form>
         </main>
 
-        <div class="complaints"></div>
-        <!--
-        <section class="complaints content-box">
-            <h1>Complaint Box</h1>
-            <p>Do you have any complaints about your experience on this website? Tell us about it here.</p>
-            <a href="complaints.html" class="hover-button">Register Complaint</a>
-        </section>              
-        -->
+        <div class="extraspace">
+            <a href="#" class="logout">Logout</a>
+        </div>
 
         <div class="footer-wrapper">
             <footer>

@@ -34,6 +34,10 @@ body {
     margin: 0;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 a {
     text-decoration: none;
     color: var(--grey);
@@ -104,8 +108,8 @@ main {
     grid-area: footer;
 }
 
-.complaints {
-    grid-area: complaints;
+.extraspace {
+    grid-area: extraspace;
 }
 
 /* ============================ HEADER ============================== */
@@ -113,6 +117,8 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
+    line-height: 60%;
+    margin-bottom: 5px;
 }
 
 .logo {
@@ -124,28 +130,42 @@ header {
 
 header h1 {
     font-family: "Arial Black", helvectiva, sans-serif;
-    font-size: 2.5em;
+    font-size: 1.8rem;
 }
 
 header h2 {
     font-style: italic;
     color: var(--grey);
+    font-size: 1.2rem;
 }
 
-/* ============================= LOGIN FORM ======================================= */
+/* ============================= FORM ======================================= */
 .content-box {
     display: flex;
     flex-direction: column;
     background-color: white;
     padding: 5px 10px;
-    border-radius: 50px;
+    border-radius: 20px;
     border: 3px solid #888888;
+    line-height: 93%;
 }
 
-.login h1 {
+.content-box h1 {
     font-family: cambria, sans-serif;
     text-align: center;
     color: darkred;
+}
+
+.important {
+    font-style: italic;
+    line-height: 1rem;
+    color: red;
+}
+
+.important:before {             /* exclamation sign */
+    font-family: "Font Awesome 5 Free";     
+    font-weight: 900;           /* .fas */
+    content: "\f071";           /* .fa-exclamation-triangle */
 }
 
 .custom-input {
@@ -153,7 +173,6 @@ header h2 {
     margin: 10px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     border: 2px solid var(--input-placeholder-color);
     padding: 5px 0;
     background-color: var(--off-white);
@@ -168,9 +187,10 @@ header h2 {
 .custom-input input {
     font-family: "Times New Roman", sans-serif;
     font-size: 1.1em;
-    flex: 1;
+    width: 100%;
     border: none;
     outline: none;
+    background-color: inherit;
 }
 
 .hover-button {
@@ -184,8 +204,7 @@ header h2 {
     border-radius: 5px;
     outline: none;
     opacity: 1;
-    margin-left: auto;                  /* push button to right */
-    margin-right: 15px;
+    margin: 5px 15px 0 auto;
 }
 
 .hover-button:hover, .hover-button:active {
@@ -196,6 +215,29 @@ header h2 {
 
 .hover-button:active {
     box-shadow: 2px 2px 2px;
+}
+
+/* ================ FORM ALTERNATIVE (DOWNLOAD REGISTRATION REPORT) =============== */
+.alternative {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.alternative fieldset {
+    border: none;
+    flex: 1;
+    min-width: 0;
+}
+
+.alternative legend {
+    text-align: center;
+    font-weight: bold;
+}
+
+.alt-text {
+    font-weight: bold;
+    margin: auto;
 }
 
 /* ============================= SIDE BAR ========================================== */
@@ -214,13 +256,12 @@ header h2 {
     opacity: 1;
 }
 
-/* ============================== COMPLAINTS ======================================== */
-/*
-.complaints {
-    width: 60%;
-    margin: auto;
+/* ============================== EXTRA SPACE (RIGHT SIDE) ============================ */
+.logout {
+    margin-left: 60%;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
-*/
 
 /* ============================= FOOTER ============================================= */
 .footer-wrapper {
@@ -246,9 +287,9 @@ footer {
     .content {
         grid-template-areas: 
             'header header header header header header'
-            'sidebar sidebar main main main complaints'
-            'sidebar sidebar main main main complaints'
-            'sidebar sidebar main main main complaints'
+            'sidebar sidebar main main main extraspace'
+            'sidebar sidebar main main main extraspace'
+            'sidebar sidebar main main main extraspace'
             'footer footer footer footer footer footer';
         grid-gap: 5px;
     }
@@ -259,9 +300,9 @@ footer {
     .content {
         grid-template-areas: 
             'header header header header header header'
-            'sidebar sidebar main main complaints complaints'
-            'sidebar sidebar main main complaints complaints'
-            'sidebar sidebar main main complaints complaints'
+            'sidebar sidebar main main extraspace extraspace'
+            'sidebar sidebar main main extraspace extraspace'
+            'sidebar sidebar main main extraspace extraspace'
             'footer footer footer footer footer footer';
         grid-gap: 10px;
     }

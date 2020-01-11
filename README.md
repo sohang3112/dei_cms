@@ -11,18 +11,18 @@ This project is an effort to redesign the website using HTML5 and CSS3 to give i
 ## Features
 
 ### Student 
-    - Login using roll no. and date of birth
-    - Fees Payment (first time / continuing)
-    - Student Registration (first time / continuing)
-    - Download Registration Report
-    - View marks by subject
-    - View semester and yearly reports
+- Login using roll no. and date of birth
+- Fees Payment (first time / continuing)
+- Student Registration (first time / continuing)
+- Download Registration Report
+- View marks by subject
+- View semester and yearly reports
 
 ### Teacher (Administrator)
-    - Login using user id and password
-    - Upload/edit marks by subject
-    - Sort/(Manipulate using Excel Formulae) student marks
-    - View fee payment data for current semester
+- Login using user id and password
+- Upload/edit marks by subject
+- Sort/(Manipulate using Excel Formulae) student marks
+- View fee payment data for current semester
 
 ## Dependencies
 - Font Awesome 5 (hosted by cdnjs.cloudflare.com)
